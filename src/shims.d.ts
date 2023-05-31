@@ -9,3 +9,7 @@ declare global {
     env: Record<string, unknown>
   }
 }
+
+declare module 'nprogress'
+declare module 'pinia-plugin-persistedstate'
+declare module 'path-browserify'
