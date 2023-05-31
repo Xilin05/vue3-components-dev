@@ -13,7 +13,7 @@
               GitHub开源地址：<el-button
                 type="primary"
                 link
-                @click="toGitHub('https://github.com/zouzhibin/vue-admin-perfect')"
+                @click="toGitHub('https://github.com/Xilin05/vue3-components-dev.git')"
                 >点我</el-button
               >
             </div>
@@ -22,16 +22,13 @@
               Gitee开源地址：<el-button
                 type="primary"
                 link
-                @click="toGitHub('https://gitee.com/yuanzbz/vue-admin-perfect')"
+                @click="toGitHub('https://gitee.com/ling0512/vue3-components-dev.git')"
                 >点我</el-button
               >
             </div>
             <el-divider />
             <div class="item-child">
-              github开源地址：<el-button
-                type="primary"
-                link
-                @click="toGitHub('https://github.com/zouzhibin/vue-admin-perfect')"
+              我的个人博客：<el-button type="primary" link @click="toGitHub('https://blog.shining98.top')"
                 >点我</el-button
               >
             </div>
