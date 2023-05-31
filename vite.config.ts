@@ -2,11 +2,31 @@
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import ElementPlus from 'unplugin-element-plus/dist/vite'
+// @ts-ignore
+import ElementPlus from 'unplugin-element-plus/vite'
 import path from 'path'
+
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), ElementPlus({})],
+  // eslint-disable-next-line
+  plugins: [
+    vue(),
+    ElementPlus(),
+    createSvgIconsPlugin({
+      // 配置路劲在你的src里的svg存放文件
+      iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
+      symbolId: 'icon-[dir]-[name]'
+    })
+  ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "./src/styles/index.scss" as *;`
+      }
+    }
+  },
   resolve: {
     alias: {
       // '@': fileURLToPath(new URL('./src', import.meta.url))
